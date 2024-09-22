@@ -151,6 +151,10 @@ footer #mode-dark:hover {
   animation: notify_close 0.5s ease;
 }
 
+#notification.closed {
+  display: none;
+}
+
 @keyframes notify {
   from {
     bottom: 0;
