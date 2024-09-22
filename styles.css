@@ -4,7 +4,7 @@
   --color-secondary: #3700b3;
   --color-white: #ffffff;
   --color-black: #000000;
-  --backgroud-body: var(--color-white)
+  --backgroud-body: var(--color-white);
 }
 
 * {
@@ -23,7 +23,7 @@ body.dark {
   --mode-dark: 1;
   --color-primary: #333333;
   --color-secondary: #000000;
-  --backgroud-body: var(--color-black)
+  --backgroud-body: var(--color-black);
 }
 
 header {
@@ -69,6 +69,20 @@ section {
 
 section h2 {
   text-align: center;
+}
+
+#search {
+  border: 0;
+  border-bottom: 2px solid var(--color-primary);
+  background-color: var(--color-white);
+  padding: 8px;
+  margin: 16px auto 32px;
+  min-width: 300px;
+  outline: none;
+}
+
+.search-container {
+  display: flex;
 }
 
 .product-list {
