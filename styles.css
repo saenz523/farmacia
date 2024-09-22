@@ -1,136 +1,170 @@
 :root {
-    --mode-dark: 0;
-    --color-primary: #6200EE;
-    --color-secondary: #3700b3;
-    --color-white: #ffffff
+  --mode-dark: 0;
+  --color-primary: #6200ee;
+  --color-secondary: #3700b3;
+  --color-white: #ffffff;
 }
 
-*{
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
+* {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body.dark {
-    --mode-dark: 1;
-    --color-primary: #333333;
-    --color-secondary: #000000;
+  --mode-dark: 1;
+  --color-primary: #333333;
+  --color-secondary: #000000;
 }
 
 header {
-    top: 0;
-    position: fixed;
-    width: calc(100% - 8px);
-    display: flex;
-    padding: 0 0 0 8px;
-    background-color: var(--color-primary);
+  top: 0;
+  position: fixed;
+  width: calc(100% - 8px);
+  display: flex;
+  padding: 0 0 0 8px;
+  background-color: var(--color-primary);
 }
 
 header .logo {
-    height: 32px;
-    padding: 8px;
-    margin-right: auto;
+  height: 32px;
+  padding: 8px;
+  margin-right: auto;
 }
 
 header nav {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 22px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22px;
 }
 
 header nav a {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-white);
-    padding: 0 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-white);
+  padding: 0 8px;
 }
 
 header nav a.active,
 header nav a:hover {
-    background-color: var(--color-secondary);
-    text-decoration: underline;
+  background-color: var(--color-secondary);
+  text-decoration: underline;
 }
 
 section {
-    margin-top: 64px;
+  margin-top: 64px;
 }
 
 section h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
 }
 
 .product-list .product {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 5px 5px #f3f3f3;
-    max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 5px 5px #f3f3f3;
+  max-width: 300px;
 }
 
 .product-list .product .product-body {
-    height: 100%;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-list .product img {
-    width: 300px;
+  width: 300px;
 }
 
 .product-list .product h3 {
-    margin: 0 0 8px;
-    font-size: 16px;
+  margin: 0 0 8px;
+  font-size: 16px;
 }
 
 .product-list .product p {
-    margin: auto 0 0;
-    font-size: 24px;
+  margin: auto 0 0;
+  font-size: 24px;
 }
 
 .product-list .product button {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    padding: 12px;
-    margin: 16px 0 0;
-    border-radius: 8px;
-    border: none;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  padding: 12px;
+  margin: 16px 0 0;
+  border-radius: 8px;
+  border: none;
 }
 
 .product-list .product button:hover {
-    cursor: pointer;
-    background-color: var(--color-secondary);
+  cursor: pointer;
+  background-color: var(--color-secondary);
 }
 
 footer {
-    padding: 8px 32px;
-    margin-top: 32px;
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 8px 32px;
+  margin-top: 32px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 footer #mode-dark {
-    height: 64px;
-    filter: invert(var(--mode-dark));
+  height: 64px;
+  filter: invert(var(--mode-dark));
 }
 
 footer #mode-dark:hover {
-    filter: invert(0.5);
-    cursor: pointer;
+  filter: invert(0.5);
+  cursor: pointer;
+}
+
+#notification {
+  position: fixed;
+  bottom: 100px;
+  right: 16px;
+  padding: 8px 32px;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  animation: notify 0.5s ease;
+}
+
+#notification.close {
+  bottom: -100px;
+  animation: notify_close 0.5s ease;
+}
+
+@keyframes notify {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 100px;
+  }
+}
+
+@keyframes notify_close {
+  from {
+    bottom: 100px;
+  }
+  to {
+    bottom: -100px;
+  }
 }
