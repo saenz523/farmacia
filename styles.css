@@ -10,6 +10,9 @@ body {
 }
 
 header {
+    top: 0;
+    position: fixed;
+    width: 100%;
     display: flex;
     padding: 0 0 0 8px;
     background-color: #6200EE;
@@ -36,8 +39,10 @@ header nav a {
     padding: 0 8px;
 }
 
+header nav a.active,
 header nav a:hover {
     background-color: #3700b3;
+    text-decoration: underline;
 }
 
 .product-list {
@@ -88,3 +93,10 @@ header nav a:hover {
     cursor: pointer;
     background-color: #3700b3;
 }
+
+footer {
+    padding: 8px 32px;
+    margin-top: 32px;
+    color: #ffffff;
+    background-color: #6200EE;
+}  
