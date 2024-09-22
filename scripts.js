@@ -67,11 +67,11 @@ function agregarProductoAlCarrito(btn) {
   });
 }
 
-function cargarProductos() {
+function cargarProductos(list) {
   const productList = document.getElementById("product-list");
   productList.innerHTML = ""; // Limpiamos el contenido previo
 
-  products.forEach((producto) => {
+  list.forEach((producto) => {
     // Crear el contenedor del producto
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
@@ -97,7 +97,7 @@ function cargarProductos() {
     const boton = document.createElement("button");
     boton.classList.add("btn-buy");
     boton.textContent = "Agregar al carrito";
-    agregarProductoAlCarrito(boton)
+    agregarProductoAlCarrito(boton);
 
     // Agregar los elementos al contenedor del producto
     productBody.appendChild(nombre);
@@ -111,5 +111,16 @@ function cargarProductos() {
   });
 }
 
-// Cargar los productos al cargar la página
-window.onload = cargarProductos;
+inputSearch = document.getElementById("search");
+function buscarProducto() {
+  const value = inputSearch.value.toLowerCase();
+  const result = products.filter((product) =>
+    product.nombre.toLowerCase().includes(value)
+  );
+  cargarProductos(result);
+}
+
+inputSearch.addEventListener("keyup", (event) => {
+  buscarProducto();
+});
+window.onload = cargarProductos(products);
