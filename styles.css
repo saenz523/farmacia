@@ -1,4 +1,5 @@
 :root {
+    --mode-dark: 0;
     --color-primary: #6200EE;
     --color-secondary: #3700b3;
     --color-white: #ffffff
@@ -16,6 +17,7 @@ body {
 }
 
 body.dark {
+    --mode-dark: 1;
     --color-primary: #333333;
     --color-secondary: #000000;
 }
@@ -118,4 +120,17 @@ footer {
     margin-top: 32px;
     color: var(--color-white);
     background-color: var(--color-primary);
-}  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer #mode-dark {
+    height: 64px;
+    filter: invert(var(--mode-dark));
+}
+
+footer #mode-dark:hover {
+    filter: invert(0.5);
+    cursor: pointer;
+}
