@@ -1,3 +1,9 @@
+:root {
+    --color-primary: #6200EE;
+    --color-secondary: #3700b3;
+    --color-white: #ffffff
+}
+
 *{
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -9,13 +15,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body.dark {
+    --color-primary: #333333;
+    --color-secondary: #000000;
+}
+
 header {
     top: 0;
     position: fixed;
-    width: 100%;
+    width: calc(100% - 8px);
     display: flex;
     padding: 0 0 0 8px;
-    background-color: #6200EE;
+    background-color: var(--color-primary);
 }
 
 header .logo {
@@ -35,14 +46,22 @@ header nav a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-white);
     padding: 0 8px;
 }
 
 header nav a.active,
 header nav a:hover {
-    background-color: #3700b3;
+    background-color: var(--color-secondary);
     text-decoration: underline;
+}
+
+section {
+    margin-top: 64px;
+}
+
+section h2 {
+    text-align: center;
 }
 
 .product-list {
@@ -81,8 +100,8 @@ header nav a:hover {
 }
 
 .product-list .product button {
-    color: #ffffff;
-    background-color: #6200EE;
+    color: var(--color-white);
+    background-color: var(--color-primary);
     padding: 12px;
     margin: 16px 0 0;
     border-radius: 8px;
@@ -91,12 +110,12 @@ header nav a:hover {
 
 .product-list .product button:hover {
     cursor: pointer;
-    background-color: #3700b3;
+    background-color: var(--color-secondary);
 }
 
 footer {
     padding: 8px 32px;
     margin-top: 32px;
-    color: #ffffff;
-    background-color: #6200EE;
+    color: var(--color-white);
+    background-color: var(--color-primary);
 }  
